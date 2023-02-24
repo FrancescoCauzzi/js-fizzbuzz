@@ -18,18 +18,42 @@ for(let i = 1; i <= 100; i++ ){
 
 // provo a selezionare il container delle cards
 let myContainerEl = document.querySelector('.my-container');
-console.log(myContainerEl);
+console.log(myContainerEl.offsetWidth);
 
 // let myCardWidth = "calc(100% / 7 * 1 - (10px / 7 *6))";
 
-
+let newDivElement;
 
 for(let i = 1; i <= 100; i++ ){
-  let newDivElement = document.createElement('div');
-  newDivElement.className = 'my-card';
+  newDivElement = document.createElement('div');
   
-  
-
+  newDivElement.className = 'my-card';  
   myContainerEl.appendChild(newDivElement);
-}
+  
 
+  if(i % 3 === 0 && i % 5 ===0 ){
+    newDivElement.innerHTML = 'FizzBuzz';
+    newDivElement.style.backgroundColor = 'crimson'
+  }
+  else if(i % 3 === 0){
+    newDivElement.innerHTML = 'Fizz';
+    newDivElement.style.backgroundColor = '#0CD6A1'
+  }else if(i % 5 ===0){
+    newDivElement.innerHTML = 'Buzz';
+    newDivElement.style.backgroundColor = '#FFD166'
+
+    
+
+  }else{
+    newDivElement.innerHTML = i;
+
+  }
+  // let cardHeight = newDivElement.offsetWidth;
+  let boundingRect = newDivElement.getBoundingClientRect();
+
+  let cardWidth = boundingRect.width;
+  console.log(cardWidth);
+
+  newDivElement.style.height = cardWidth + "px";
+  
+} 
