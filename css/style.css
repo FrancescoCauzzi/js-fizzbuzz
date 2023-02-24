@@ -1,5 +1,7 @@
 *{
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   
 }
 
@@ -8,17 +10,35 @@ body{
   font-family: sans-serif;
 }
 
-.my-container{
-  width: 70%;
-  margin: auto;
-  background-color: crimson;
-  
-}
-
 header {
   text-align: center;
   font-weight: bold;
   font-size: 2em;
   color: white;
+  margin-bottom: 50px;
+}
+
+.my-container{
+  width: 90vw;
+  margin: auto;
+  background-color: crimson;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  
+}
+
+/* width: calc( 100% / [numero colonne totali] * [colonne che vogliamo occupare] - ([spazio da creare] / [colonne totali] * [spazi vuoti nella riga] )  */
+
+.my-card{
+  width: calc(100% / 7 * 1 - (20px / 7 *6));
+  height: calc(90vw / 7 * 1 - (20px / 7 *6));
+  background-color: blue;
+  
+  
+  flex-wrap: wrap;
+  min-width: 100px;
+  
+  
 
 }
